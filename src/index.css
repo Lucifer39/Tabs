@@ -1,13 +1,144 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --background-blue: #dff6ff;
+  --light-blue: #47b5ff;
+  --secondary-blue: #256d85;
+  --primary-blue: #06283d;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: var(--background-blue);
+  color: var(--primary-blue);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 50vw;
+  padding: 2rem;
+}
+
+.right-col {
+  padding: 2rem;
+  width: 110vw;
+  height: 70vh;
+}
+
+.left-col {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 50vw;
+}
+
+.company {
+  padding: 1rem;
+  cursor: pointer;
+  animation-name: prime-animation-reverse;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.selected {
+  padding: 1rem;
+  border-left: 2px solid var(--secondary-blue);
+}
+
+.company:hover {
+  animation-name: prime-animation;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes prime-animation {
+  0% {
+    color: var(--primary-blue);
+    border-left: 0px solid var(--secondary-blue);
+  }
+  25% {
+    color: var(--primary-blue);
+    border-left: 0.5px solid var(--secondary-blue);
+  }
+  50% {
+    color: var(--light-blue);
+    border-left: 1px solid var(--secondary-blue);
+  }
+  75% {
+    color: var(--light-blue);
+    border-left: 1.5px solid var(--secondary-blue);
+  }
+  100% {
+    color: var(--light-blue);
+    border-left: 2px solid var(--secondary-blue);
+  }
+}
+
+@keyframes prime-animation-reverse {
+  100% {
+    color: var(--primary-blue);
+    border-left: 0px solid var(--secondary-blue);
+  }
+  75% {
+    color: var(--primary-blue);
+    border-left: 0.5px solid var(--secondary-blue);
+  }
+  50% {
+    color: var(--light-blue);
+    border-left: 1px solid var(--secondary-blue);
+  }
+  25% {
+    color: var(--light-blue);
+    border-left: 1.5px solid var(--secondary-blue);
+  }
+  0% {
+    color: var(--light-blue);
+    border-left: 2px solid var(--secondary-blue);
+  }
+}
+
+.title {
+  font-size: 2.5rem;
+  color: var(--secondary-blue);
+  padding-bottom: 1rem;
+}
+
+.company-info {
+  background-color: var(--light-blue);
+  color: var(--primary-blue);
+  font-size: 1rem;
+  width: 5rem;
+  padding: 0.25rem;
+  border-radius: 5px;
+}
+
+h4 {
+  color: grey;
+  padding: 1rem;
+}
+
+ul {
+  list-style-type: square;
+}
+
+li {
+  font-size: 1rem;
+  padding: 0.5rem;
 }
